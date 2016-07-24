@@ -1,0 +1,31 @@
+Concept 
+	
+Core concept: Escape the room
+
+You awaken in a locked room, unable to escape
+
+Use environmental clues such as light and sound to determine what to do next
+
+Trigger pressure plates and solve puzzles to progress towards the exit
+
+============================
+Rules
+
+No lose condition
+
+Anything you can do you are allowed to do
+
+You win by finally exiting the room
+
+============================
+Reuirements
+
+Unreal's provided starter Content pack
+
+C++ Code and blueprint to encode behavior
+
+Various sound effects to enhance atmosphere
+
+Sketches for layout of rooms
+
+Sketches for how puzzles work
