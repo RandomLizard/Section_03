@@ -29,5 +29,8 @@ private:
 	UInputComponent* Input = nullptr;
 	
 	//Ray-cast and grab what's in reach
-	void Grab();
+	void GrabPressed();
+
+	//called when grab is released
+	void GrabReleased();
 };

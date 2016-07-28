@@ -42,7 +42,8 @@ void UGrabber::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Input component located in %s!"), *(GetOwner()->GetName()));
 		///Bind the input axis
-		Input->BindAction("Grab", IE_Pressed, this, &UGrabber::Grab);
+		Input->BindAction("Grab", IE_Pressed, this, &UGrabber::GrabPressed);
+		Input->BindAction("Grab", IE_Released, this, &UGrabber::GrabReleased);
 	}
 	else
 	{
@@ -51,9 +52,14 @@ void UGrabber::BeginPlay()
 	
 }
 
-void UGrabber::Grab()
+void UGrabber::GrabPressed()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Grab Pressed"));
+}
+
+void UGrabber::GrabReleased()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Grab Released"));
 }
 
 
