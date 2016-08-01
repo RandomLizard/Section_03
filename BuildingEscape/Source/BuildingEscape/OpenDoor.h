@@ -43,7 +43,7 @@ private:
 
 	AActor* Owner; //owning door
 
-
+	//returns total mass in kg
 	float UOpenDoor::GetTotalMassOfActorsOnPlate();
 
 };
