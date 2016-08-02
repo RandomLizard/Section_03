@@ -27,11 +27,13 @@ void UOpenDoor::BeginPlay()
 
 void UOpenDoor::OpenDoor()
 {
+	if (!Owner) { UE_LOG(LogTemp, Error, TEXT("Owner is Undefined")); return; }
 	Owner->SetActorRotation(FRotator(0.f, OpenAngle, 0.f));
 }
 
 void UOpenDoor::CloseDoor()
 {
+	if (!Owner) { UE_LOG(LogTemp, Error, TEXT("Owner is Undefined")); return; }
 	Owner->SetActorRotation(FRotator(0.f, -90.f, 0.f));
 }
 
@@ -62,12 +64,12 @@ float UOpenDoor::GetTotalMassOfActorsOnPlate()
 	
 	//find all overlapping actors
 	TArray<AActor*> OverlappingActors;
+	if (!PressurePlate) { UE_LOG(LogTemp, Error, TEXT("PressurePlate is Undefined")) return; }
 	PressurePlate->GetOverlappingActors(OUT OverlappingActors);
 
 	for (auto& Actor : OverlappingActors)
 	{	
 		TotalMass += Actor->FindComponentByClass<UPrimitiveComponent>()->GetMass();
-		UE_LOG(LogTemp, Warning, TEXT("Adding mass for %s"), *(Actor->GetName()));
 	}
 
 	//iterate through them adding their masses
